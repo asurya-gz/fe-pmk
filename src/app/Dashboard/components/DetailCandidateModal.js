@@ -19,7 +19,7 @@ const DetailCandidateModal = ({ candidate, onClose }) => {
             {/* Candidate Header */}
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-8">
               <img
-                src={`http://localhost:4000/uploads/${candidate.image_path}`}
+                src={`https://be-pmk-production.up.railway.app/uploads/${candidate.image_path}`}
                 alt={candidate.name}
                 className="w-32 h-32 sm:w-40 sm:h-40 rounded-lg object-cover ring-2 ring-purple-100"
               />

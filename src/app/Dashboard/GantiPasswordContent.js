@@ -35,7 +35,7 @@ const GantiPasswordContent = () => {
     try {
       // Send POST request to the API using axios
       const response = await axios.post(
-        "http://localhost:4000/api/change-password",
+        "https://be-pmk-production.up.railway.app/api/change-password",
         {
           userId, // Include the userId
           oldPassword, // Include the old password

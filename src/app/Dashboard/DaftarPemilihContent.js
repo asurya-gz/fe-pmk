@@ -13,7 +13,7 @@ const DaftarPemilihContent = () => {
     const fetchVoters = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/all-voters"
+          "https://be-pmk-production.up.railway.app/api/all-voters"
         );
         setVoters(response.data);
         setLoading(false);

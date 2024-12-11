@@ -57,13 +57,13 @@ const VotingPageContent = () => {
       try {
         // Fetch voting status
         const statusResponse = await axios.get(
-          "http://localhost:4000/api/voting"
+          "https://be-pmk-production.up.railway.app/api/voting"
         );
         setVotingStatus(statusResponse.data.status);
 
         // Fetch candidates
         const candidatesResponse = await axios.get(
-          "http://localhost:4000/api/candidate"
+          "https://be-pmk-production.up.railway.app/api/candidate"
         );
         setCandidates(candidatesResponse.data.candidates);
 
@@ -71,7 +71,7 @@ const VotingPageContent = () => {
         const nimFromUrl = searchParams.get("nim");
         if (nimFromUrl) {
           const voteCheckResponse = await axios.get(
-            `http://localhost:4000/votes/${nimFromUrl}`
+            `https://be-pmk-production.up.railway.app/votes/${nimFromUrl}`
           );
 
           if (voteCheckResponse.data.voted) {
@@ -109,7 +109,7 @@ const VotingPageContent = () => {
 
     try {
       // Submit the vote
-      const response = await axios.post(`http://localhost:4000/votes/${nim}`, {
+      const response = await axios.post(`https://be-pmk-production.up.railway.app/votes/${nim}`, {
         candidate_id: selectedCandidate,
       });
 
@@ -182,7 +182,7 @@ const VotingPageContent = () => {
               </h3>
               <div className="mt-4 flex items-center justify-center space-x-4">
                 <img
-                  src={`http://localhost:4000/uploads/${selectedCandidateData?.image_path}`}
+                  src={`https://be-pmk-production.up.railway.app/uploads/${selectedCandidateData?.image_path}`}
                   alt={selectedCandidateData?.name}
                   className="w-24 h-24 rounded-lg object-cover"
                 />
@@ -238,7 +238,7 @@ const VotingPageContent = () => {
                 )}
                 <div className="flex items-center space-x-4">
                   <img
-                    src={`http://localhost:4000/uploads/${candidate.image_path}`}
+                    src={`https://be-pmk-production.up.railway.app/uploads/${candidate.image_path}`}
                     alt={candidate.name}
                     className="w-20 h-20 rounded-lg object-cover"
                   />

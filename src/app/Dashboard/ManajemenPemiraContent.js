@@ -11,7 +11,9 @@ const useVotingStatus = () => {
   const fetchVotingStatus = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:4000/api/voting");
+      const response = await axios.get(
+        "https://be-pmk-production.up.railway.app/api/voting"
+      );
       setVotingStatus(response.data.status);
       setError(null);
     } catch (err) {
@@ -30,7 +32,7 @@ const useVotingStatus = () => {
     try {
       setLoading(true);
       const response = await axios.put(
-        "http://localhost:4000/api/update-voting",
+        "https://be-pmk-production.up.railway.app/api/update-voting",
         {
           status: newStatus,
         }
@@ -55,12 +57,12 @@ const useVotingStatus = () => {
 
       // Pertama, lakukan reset data
       const resetResponse = await axios.post(
-        "http://localhost:4000/api/reset-pemira"
+        "https://be-pmk-production.up.railway.app/api/reset-pemira"
       );
 
       // Kemudian, secara eksplisit update status menjadi 'tutup'
       const updateStatusResponse = await axios.put(
-        "http://localhost:4000/api/update-voting",
+        "https://be-pmk-production.up.railway.app/api/update-voting",
         { status: "tutup" }
       );
 

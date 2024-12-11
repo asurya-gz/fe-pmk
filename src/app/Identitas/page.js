@@ -100,7 +100,9 @@ const IdentityPage = () => {
   useEffect(() => {
     const fetchVotingStatus = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/voting");
+        const response = await axios.get(
+          "https://be-pmk-production.up.railway.app/api/voting"
+        );
         setVotingStatus(response.data.status);
       } catch (error) {
         console.error("Error fetching voting status:", error);
@@ -129,7 +131,7 @@ const IdentityPage = () => {
     try {
       // Send voter data to the backend
       const response = await axios.post(
-        "http://localhost:4000/api/add-voter",
+        "https://be-pmk-production.up.railway.app/api/add-voter",
         formData
       );
 

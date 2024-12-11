@@ -55,7 +55,7 @@ const AddCandidateModal = ({ onClose, onAddCandidate }) => {
 
       // Step 1: Add candidate
       const candidateResponse = await axios.post(
-        "http://localhost:4000/api/add-candidates",
+        "https://be-pmk-production.up.railway.app/api/add-candidates",
         formData,
         {
           headers: {
@@ -68,17 +68,20 @@ const AddCandidateModal = ({ onClose, onAddCandidate }) => {
 
       // Step 2: Add vision
       if (newCandidate.vision) {
-        await axios.post("http://localhost:4000/api/visions", {
-          candidateId: candidateId,
-          vision: newCandidate.vision,
-        });
+        await axios.post(
+          "https://be-pmk-production.up.railway.app/api/visions",
+          {
+            candidateId: candidateId,
+            vision: newCandidate.vision,
+          }
+        );
       }
 
       // Step 3: Add missions
       const missionPromises = newCandidate.mission
         .filter((mission) => mission.trim() !== "") // Filter out empty missions
         .map((mission) =>
-          axios.post("http://localhost:4000/api/missions", {
+          axios.post("https://be-pmk-production.up.railway.app/api/missions", {
             candidateId: candidateId,
             mission: mission,
           })

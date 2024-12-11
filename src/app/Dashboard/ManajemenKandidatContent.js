@@ -18,7 +18,9 @@ const ManajemenKandidatContent = () => {
   const fetchCandidates = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:4000/api/candidate");
+      const response = await axios.get(
+        "https://be-pmk-production.up.railway.app/api/candidate"
+      );
       setCandidates(response.data.candidates);
     } catch (err) {
       setError("Failed to fetch candidates data");
@@ -145,7 +147,7 @@ const ManajemenKandidatContent = () => {
                         ) {
                           axios
                             .delete(
-                              `http://localhost:4000/api/candidate/${candidate.id}`
+                              `https://be-pmk-production.up.railway.app/api/candidate/${candidate.id}`
                             )
                             .then(() => fetchCandidates())
                             .catch((err) => {

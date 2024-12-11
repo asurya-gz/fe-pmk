@@ -124,10 +124,10 @@ const DashboardContent = () => {
           votesResponse,
           votingResponse,
         ] = await Promise.all([
-          axios.get("http://localhost:4000/api/all-voters"),
-          axios.get("http://localhost:4000/api/candidate"),
-          axios.get("http://localhost:4000/votes/get-all"),
-          axios.get("http://localhost:4000/api/voting"),
+          axios.get("https://be-pmk-production.up.railway.app/api/all-voters"),
+          axios.get("https://be-pmk-production.up.railway.app/api/candidate"),
+          axios.get("https://be-pmk-production.up.railway.app/votes/get-all"),
+          axios.get("https://be-pmk-production.up.railway.app/api/voting"),
         ]);
 
         setTotalVoters(votersResponse.data.length);
