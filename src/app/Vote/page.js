@@ -252,7 +252,7 @@ const VotingPageContent = () => {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <h4 className="text-sm font-medium text-purple-900">Visi:</h4>
+                  <h4 className="text-sm font-medium text-purple-900">Tema:</h4>
                   <p className="mt-1 text-sm text-purple-600">
                     {candidate.visions[0]}
                   </p>
