@@ -89,14 +89,13 @@ const IdentityPage = () => {
 
   // Generate angkatan options dynamically (4 years back and 4 years forward)
   const generateAngkatanOptions = () => {
-    const currentYear = new Date().getFullYear();
-    const angkatanOptions = [];
-    for (let i = -4; i <= 4; i++) {
-      angkatanOptions.push(currentYear + i);
-    }
-    return angkatanOptions.map((year) => year.toString());
-  };
-
+  const currentYear = new Date().getFullYear();
+  const angkatanOptions = [];
+  for (let i = -8; i <= 8; i++) {
+    angkatanOptions.push(currentYear + i);
+  }
+  return angkatanOptions.map((year) => year.toString());
+};
   useEffect(() => {
     const fetchVotingStatus = async () => {
       try {
