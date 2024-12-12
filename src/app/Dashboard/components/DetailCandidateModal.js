@@ -38,7 +38,7 @@ const DetailCandidateModal = ({ candidate, onClose }) => {
               {/* Visi Section */}
               <div>
                 <h3 className="text-lg font-semibold text-purple-900 mb-4">
-                  Visi:
+                  Tema:
                 </h3>
                 <div className="bg-purple-50/50 rounded-lg p-4 ring-1 ring-purple-900/5">
                   <div className="space-y-3">
