@@ -7,6 +7,7 @@ import {
   GraduationCap,
   Calendar,
   Lock,
+  Mail,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -85,17 +86,18 @@ const IdentityPage = () => {
     nim: "",
     jurusan: "",
     angkatan: "",
+    email: "", // Add email field
   });
 
   // Generate angkatan options dynamically (4 years back and 4 years forward)
   const generateAngkatanOptions = () => {
-  const currentYear = new Date().getFullYear();
-  const angkatanOptions = [];
-  for (let i = -8; i <= 8; i++) {
-    angkatanOptions.push(currentYear + i);
-  }
-  return angkatanOptions.map((year) => year.toString());
-};
+    const currentYear = new Date().getFullYear();
+    const angkatanOptions = [];
+    for (let i = -8; i <= 8; i++) {
+      angkatanOptions.push(currentYear + i);
+    }
+    return angkatanOptions.map((year) => year.toString());
+  };
   useEffect(() => {
     const fetchVotingStatus = async () => {
       try {
@@ -252,6 +254,31 @@ const IdentityPage = () => {
                       onChange={handleChange}
                       className="block w-full pl-9 sm:pl-10 pr-3 py-2 sm:py-2.5 border-0 bg-white/80 text-purple-900 text-sm rounded-lg shadow-sm ring-1 ring-inset ring-purple-200 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all duration-200"
                       placeholder="Masukkan Jurusan"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-purple-900"
+                  >
+                    Email
+                  </label>
+                  <div className="mt-1 relative">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-purple-400" />{" "}
+                      {/* Add Mail icon */}
+                    </div>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="block w-full pl-9 sm:pl-10 pr-3 py-2 sm:py-2.5 border-0 bg-white/80 text-purple-900 text-sm rounded-lg shadow-sm ring-1 ring-inset ring-purple-200 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all duration-200"
+                      placeholder="Masukkan Email"
                     />
                   </div>
                 </div>

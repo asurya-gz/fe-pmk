@@ -35,13 +35,17 @@ const DaftarPemilihContent = () => {
   );
 
   const handleExport = () => {
-    // Implement export functionality here
-    // For CSV export example:
-    const headers = ["Nama", "NIM", "Jurusan", "Angkatan"];
+    const headers = ["Nama", "NIM", "Email", "Jurusan", "Angkatan"];
     const csvContent = [
       headers.join(","),
       ...filteredVoters.map((voter) =>
-        [voter.nama, voter.nim, voter.jurusan, voter.angkatan].join(",")
+        [
+          voter.nama,
+          voter.nim,
+          voter.email,
+          voter.jurusan,
+          voter.angkatan,
+        ].join(",")
       ),
     ].join("\n");
 
@@ -118,6 +122,9 @@ const DaftarPemilihContent = () => {
                 NIM
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-purple-800 uppercase tracking-wider">
+                Email
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-purple-800 uppercase tracking-wider">
                 Jurusan
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-purple-800 uppercase tracking-wider">
@@ -136,6 +143,9 @@ const DaftarPemilihContent = () => {
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                   {voter.nim}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  {voter.email}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                   {voter.jurusan}
