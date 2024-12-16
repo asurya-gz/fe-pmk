@@ -167,7 +167,7 @@ const AddCandidateModal = ({ onClose, onAddCandidate }) => {
 
           <div className="mb-4">
             <label className="block mb-2 text-sm font-medium text-gray-700">
-              Tema
+              Visi
             </label>
             <textarea
               value={newCandidate.vision}
@@ -175,7 +175,7 @@ const AddCandidateModal = ({ onClose, onAddCandidate }) => {
                 setNewCandidate({ ...newCandidate, vision: e.target.value })
               }
               className="w-full p-2 border rounded-lg"
-              placeholder="Masukkan tema kandidat"
+              placeholder="Masukkan visi kandidat"
               rows="4"
             />
           </div>
